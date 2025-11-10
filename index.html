@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Bites - Healthier Bites, Naturally Better</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1rem 5%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2d5016;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #2d5016;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%);
+            color: white;
+            padding: 6rem 5%;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .hero-line {
+            width: 200px;
+            height: 4px;
+            background: #c9a961;
+            margin: 1.5rem auto;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Products Section */
+        .products-section {
+            padding: 4rem 5%;
+            background: #f8f8f8;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2d5016;
+            margin-bottom: 3rem;
+        }
+
+        .products-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-header {
+            display: flex;
+            align-items: center;
+            padding: 2rem;
+            cursor: pointer;
+            background: linear-gradient(to right, #2d5016, #4a7c2c);
+            color: white;
+        }
+
+        .product-image {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 2rem;
+            background: #ddd;
+        }
+
+        .product-info {
+            flex: 1;
+        }
+
+        .product-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-info p {
+            opacity: 0.9;
+        }
+
+        .dropdown-icon {
+            font-size: 2rem;
+            transition: transform 0.3s;
+        }
+
+        .dropdown-icon.active {
+            transform: rotate(180deg);
+        }
+
+        .product-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .product-details.active {
+            max-height: 2000px;
+        }
+
+        .details-content {
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .detail-box {
+            background: #f8f8f8;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #c9a961;
+        }
+
+        .detail-box h4 {
+            color: #2d5016;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .qr-placeholder {
+            width: 150px;
+            height: 150px;
+            background: #ddd;
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d5016;
+            color: white;
+            text-align: center;
+            padding: 2rem 5%;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .product-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .product-image {
+                margin: 0 0 1rem 0;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">HEART BITES</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>HEART BITES</h1>
+        <div class="hero-line"></div>
+        <p>Healthier Bites, Naturally Better.</p>
+        <p style="font-size: 1.2rem; opacity: 0.9;">Discover the nutritious power of Puso ng Saging in every bite</p>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <h2 class="section-title">Our Products</h2>
+        <div class="products-container">
+            
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-header" onclick="toggleDropdown(1)">
+                    <img src="https://via.placeholder.com/120" alt="Product 1" class="product-image">
+                    <div class="product-info">
+                        <h3>Product Name 1</h3>
+                        <p>Brief description of the product made with puso ng saging</p>
+                    </div>
+                    <span class="dropdown-icon" id="icon-1">▼</span>
+                </div>
+                <div class="product-details" id="details-1">
+                    <div class="details-content">
+                        <div class="detail-box">
+                            <h4>QR Code</h4>
+                            <div class="qr-placeholder">QR Code Here</div>
+                        </div>
+                        <div class="detail-box">
+                            <h4>Recipe</h4>
+                            <p>Ingredients and preparation details will be added here. This section will contain the complete recipe for making this delicious dish.</p>
+                        </div>
+                        <div class="detail-box">
+                            <h4>Procedures</h4>
+                            <p>Step-by-step cooking instructions will be listed here. Each step will guide you through the preparation process.</p>
+                        </div>
+                        <div class="detail-box">
+                            <h4>Health Benefits</h4>
+                            <p>Nutritional information and health benefits of puso ng saging will be detailed here, including vitamins and minerals.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-header" onclick="toggleDropdown(2)">
+                    <img src="https://via.placeholder.com/120" alt="Product 2" class="product-image">
+                    <div class="product-info">
+                        <h3>Product Name 2</h3>
+                        <p>Brief description of the product made with puso ng saging</p>
+                    </div>
+                    <span class="dropdown-icon" id="icon-2">▼</span>
+                </div>
+                <div class="product-details" id="details-2">
+                    <div class="details-content">
+                        <div class="detail-box">
+                            <h4>QR Code</h4>
+                            <div class="qr-placeholder">QR Code Here</div>
+                        </div>
+                        <div class="detail-box">
+                            <h4>Recipe</h4>
+                            <p>Ingredients and preparation details will be added here. This section will contain the complete recipe for making this delicious dish.</p>
+                        </div>
+                        <div class="detail-box">
+                            <h4>Procedures</h4>
+                            <p>Step-by-step cooking instructions will be listed here. Each step will guide you through the preparation process.</p>
+                        </div>
+                        <div class="detail-box">
+                            <h4>Health Benefits</h4>
+                            <p>Nutritional information and health benefits of puso ng saging will be detailed here, including vitamins and minerals.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-header" onclick="toggleDropdown(3)">
+                    <img src="https://via.placeholder.com/120" alt="Product 3" class="product-image">
+                    <div class="product-info">
+                        <h3>Product Name 3</h3>
+                        <p>Brief description of the product made with puso ng saging</p>
+                    </div>
+                    <span class="dropdown-icon" id="icon-3">▼</span>
+                </div>
+                <div class="product-details" id="details-3">
+                    <div class="details-content">
+                        <div class="detail-box">
+                            <h4>QR Code</h4>
+                            <div class="qr-placeholder">QR Code Here</div>
+                        </div>
+                        <div class="detail-box">
+                            <h4>Recipe</h4>
+                            <p>Ingredients and preparation details will be added here. This section will contain the complete recipe for making this delicious dish.</p>
+                        </div>
+                        <div class="detail-box">
+                            <h4>Procedures</h4>
+                            <p>Step-by-step cooking instructions will be listed here. Each step will guide you through the preparation process.</p>
+                        </div>
+                        <div class="detail-box">
+                            <h4>Health Benefits</h4>
+                            <p>Nutritional information and health benefits of puso ng saging will be detailed here, including vitamins and minerals.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-header" onclick="toggleDropdown(4)">
+                    <img src="https://via.placeholder.com/120" alt="Product 4" class="product-image">
+                    <div class="product-info">
+                        <h3>Product Name 4</h3>
+                        <p>Brief description of the product made with puso ng saging</p>
+                    </div>
+                    <span class="dropdown-icon" id="icon-4">▼</span>
+                </div>
+                <div class="product-details" id="details-4">
+                    <div class="details-content">
+                        <div class="detail-box">
+                            <h4>QR Code</h4>
+                            <div class="qr-placeholder">QR Code Here</div>
+                        </div>
+                        <div class="detail-box">
+                            <h4>Recipe</h4>
+                            <p>Ingredients and preparation details will be added here. This section will contain the complete recipe for making this delicious dish.</p>
+                        </div>
+                        <div class="detail-box">
+                            <h4>Procedures</h4>
+                            <p>Step-by-step cooking instructions will be listed here. Each step will guide you through the preparation process.</p>
+                        </div>
+                        <div class="detail-box">
+                            <h4>Health Benefits</h4>
+                            <p>Nutritional information and health benefits of puso ng saging will be detailed here, including vitamins and minerals.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>&copy; 2024 Heart Bites. Healthier Bites, Naturally Better.</p>
+        <p>Contact us for more information about our products</p>
+    </footer>
+
+    <script>
+        function toggleDropdown(id) {
+            const details = document.getElementById(`details-${id}`);
+            const icon = document.getElementById(`icon-${id}`);
+            
+            details.classList.toggle('active');
+            icon.classList.toggle('active');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
