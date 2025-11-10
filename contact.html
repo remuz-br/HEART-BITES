@@ -234,9 +234,77 @@
                 font-size: 1.5rem;
             }
         }
+        footer {
+            background: #2d5016;
+            color: white;
+            text-align: center;
+            padding: 2rem 5%;
+        }
+         /* Navigation */
+        nav {
+            background: white;
+            padding: 1rem 5%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2d5016;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #2d5016;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;     /* vertically centers text with the image */
+            justify-content: center; /* centers the whole group horizontally */
+            gap: 8px;                /* space between image and text */
+        }
+
+        .logo {
+            text-align: center;      /* ensures text itself is centered */
+        }
+        .logo-nav{
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+          }
     </style>
 </head>
 <body>
+        <!-- Navigation -->
+    <nav>
+        <div class="logo-container">
+            <img class="logo-nav" src="img/vectorized-cropped.svg" alt="">
+            <a href="index.html" class="logo">HEART BITES</a>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">Products</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
     <!-- CONTACT SECTION -->
     <!-- Add this entire contact section below the about section -->
@@ -256,7 +324,7 @@
                         <div class="contact-icon">📍</div>
                         <div class="contact-details">
                             <h4>Location</h4>
-                            <p>Angeles City, Central Luzon<br>Philippines</p>
+                            <p>Baliuag City, Central Luzon<br>Philippines</p>
                         </div>
                     </div>
 
@@ -264,7 +332,7 @@
                         <div class="contact-icon">📞</div>
                         <div class="contact-details">
                             <h4>Phone</h4>
-                            <p><a href="tel:+639123456789">+63 912 345 6789</a></p>
+                            <p><a href="tel:+639123456789">+63 928 317 2120</a></p>
                         </div>
                     </div>
 
@@ -272,8 +340,8 @@
                         <div class="contact-icon">✉️</div>
                         <div class="contact-details">
                             <h4>Email</h4>
-                            <p><a href="mailto:hello@heartbites.ph">hello@heartbites.ph</a><br>
-                            <a href="mailto:orders@heartbites.ph">orders@heartbites.ph</a></p>
+                            <p><a href="mailto:hello@heartbites.ph">kianmangahas46@gmail.com</a><br>
+                            
                         </div>
                     </div>
 
@@ -281,20 +349,15 @@
                         <div class="contact-icon">⏰</div>
                         <div class="contact-details">
                             <h4>Business Hours</h4>
-                            <p>Monday - Saturday: 8:00 AM - 6:00 PM<br>
-                            Sunday: Closed</p>
+                            <p>DEC 9 - 8:00 AM - 5:00 PM<br>
+                            </p>
                         </div>
                     </div>
                 </div>
 
                 <div class="map-container">
                     <!-- Replace the coordinates in the src with your actual business location -->
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61836.89267982991!2d120.53476117832033!3d15.145390900000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396f2f31d18d58f%3A0x28fe129bade6288!2sAngeles%2C%20Pampanga%2C%20Philippines!5e0!3m2!1sen!2s!4v1699999999999!5m2!1sen!2s"
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d325.7427600232746!2d120.90019291328275!3d14.953587022164912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33965554b5817897%3A0xeaebb1293e6e37a3!2sMarian%20College!5e0!3m2!1sen!2sph!4v1762791456828!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
@@ -304,5 +367,9 @@
          - About link: href="#about"
          - Contact link: href="#contact"
     -->
+    <footer id="contact">
+        <p>&copy; 2025 Heart Bites. Healthier Bites, Naturally Better.</p>
+        <p>Contact us for more information about our products</p>
+    </footer>
 </body>
 </html>

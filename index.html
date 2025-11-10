@@ -91,145 +91,359 @@
             margin-bottom: 3rem;
         }
 
-        .products-container {
+        .products-grid {
             max-width: 1200px;
             margin: 0 auto;
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
 
         .product-card {
             background: white;
-            border-radius: 10px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .product-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .product-header {
-            display: flex;
-            align-items: center;
-            padding: 2rem;
-            cursor: pointer;
-            background: linear-gradient(to right, #2d5016, #4a7c2c);
-            color: white;
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
         .product-image {
-            width: 120px;
-            height: 120px;
+            width: 100%;
+            height: 250px;
             object-fit: cover;
-            border-radius: 10px;
-            margin-right: 2rem;
-            background: #ddd;
         }
 
-        .product-info {
-            flex: 1;
-        }
-
-        .product-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .product-info p {
-            opacity: 0.9;
-        }
-
-        .dropdown-icon {
-            font-size: 2rem;
-            transition: transform 0.3s;
-        }
-
-        .dropdown-icon.active {
-            transform: rotate(180deg);
-        }
-
-        .product-details {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease;
-        }
-
-        .product-details.active {
-            max-height: 2000px;
-        }
-
-        .details-content {
-            padding: 2rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .detail-box {
-            background: #f8f8f8;
+        .product-content {
             padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid #c9a961;
         }
 
-        .detail-box h4 {
+        .product-content h3 {
+            font-size: 1.4rem;
             color: #2d5016;
             margin-bottom: 1rem;
-            font-size: 1.3rem;
         }
 
-        .qr-placeholder {
+        .product-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .qr-section {
+            text-align: center;
+            padding: 1rem;
+            background: #f8f8f8;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .qr-code {
             width: 150px;
             height: 150px;
-            background: #ddd;
-            margin: 1rem 0;
+            margin: 1rem auto;
+            background: white;
+            border: 2px solid #2d5016;
             display: flex;
             align-items: center;
             justify-content: center;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        .qr-label {
+            font-size: 0.9rem;
+            color: #2d5016;
+            font-weight: 600;
+        }
+
+        .view-details-btn {
+            display: block;
+            width: 100%;
+            padding: 0.8rem;
+            background: linear-gradient(135deg, #2d5016, #4a7c2c);
+            color: white;
+            text-align: center;
+            text-decoration: none;
             border-radius: 8px;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+
+        .view-details-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* About Section */
+        .about-section {
+            background: linear-gradient(135deg, #f5f5f0 0%, #e8ede8 100%);
+            padding: 80px 20px;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .about-header h2 {
+            font-size: 2.5rem;
+            color: #2d5016;
+            margin-bottom: 15px;
+        }
+
+        .about-header .underline {
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #8b6f47, #6b8e23);
+            margin: 0 auto 20px;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            color: #2d5016;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .about-values {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .value-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .value-card h4 {
+            font-size: 1.4rem;
+            color: #2d5016;
+            margin-bottom: 15px;
+        }
+
+        .value-card p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: #2d5016;
+            padding: 80px 20px;
+            color: white;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .contact-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-header .underline {
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #8b6f47, #a0c334);
+            margin: 0 auto 20px;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: start;
+            gap: 20px;
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 15px;
+            transition: background 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255,255,255,0.15);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            color: #a0c334;
+            min-width: 40px;
+        }
+
+        .contact-details h4 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: #a0c334;
+        }
+
+        .contact-details p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .contact-details a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-details a:hover {
+            color: #a0c334;
+        }
+
+        .map-container {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            height: 100%;
+            min-height: 400px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            min-height: 400px;
         }
 
         /* Footer */
         footer {
-            background: #2d5016;
+            background: #1a2e0d;
             color: white;
             text-align: center;
             padding: 2rem 5%;
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
+        @media (max-width: 968px) {
             .hero h1 {
                 font-size: 2.5rem;
             }
 
-            .product-header {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .product-image {
-                margin: 0 0 1rem 0;
+            .products-grid {
+                grid-template-columns: 1fr;
             }
 
             nav ul {
                 gap: 1rem;
             }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-values {
+                grid-template-columns: 1fr;
+            }
+
+            .about-header h2,
+            .contact-header h2 {
+                font-size: 2rem;
+            }
+        }
+        .logo-nav{
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+           
+
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;     /* vertically centers text with the image */
+            justify-content: center; /* centers the whole group horizontally */
+            gap: 8px;                /* space between image and text */
+        }
+
+        .logo {
+            text-align: center;      /* ensures text itself is centered */
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav>
-        <div class="logo">HEART BITES</div>
+        <div class="logo-container">
+            <img class="logo-nav" src="img/vectorized-cropped.svg" alt="">
+            <a href="index.html" class="logo">HEART BITES</a>
+        </div>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#products">Products</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
@@ -244,286 +458,204 @@
     <!-- Products Section -->
     <section id="products" class="products-section">
         <h2 class="section-title">Our Products</h2>
-        <div class="products-container">
+        <div class="products-grid">
             
-            <!-- Product 1: CRISPY BALAT NG PUSO NG SAGING -->
-            <!-- TO CHANGE IMAGE: Replace the src URL in the img tag below -->
+            <!-- Product 1: Crispy Balat -->
             <div class="product-card">
-                <div class="product-header" onclick="toggleDropdown(1)">
-                    <img src="https://via.placeholder.com/120" alt="Crispy Balat" class="product-image">
-                    <div class="product-info">
-                        <h3>Crispy Balat ng Puso ng Saging</h3>
-                        <p>Crispy and golden fried banana blossom peels - a delicious vegetarian snack!</p>
-                    </div>
-                    <span class="dropdown-icon" id="icon-1">▼</span>
-                </div>
-                <div class="product-details" id="details-1">
-                    <div class="details-content">
-                        <!-- TO ADD QR CODE: Replace the div content with <img src="your-qr-code.png" style="width:150px;height:150px;"> -->
-                        <div class="detail-box">
-                            <h4>QR Code</h4>
-                            <img src="your-qr-code.png" style="width:150px;height:150px;">
-                        </div>
-                        <div class="detail-box">
-                            <h4>Ingredients</h4>
-                            <ul style="line-height: 1.8;">
-                                <li>Balat ng puso ng saging</li>
-                                <li>Lemon (for soaking)</li>
-                                <li>Cornstarch</li>
-                                <li>Chicken breading</li>
-                                <li>Paprika</li>
-                                <li>Egg</li>
-                                <li>Black pepper</li>
-                                <li>Salt</li>
-                                <li>Oil (for frying)</li>
-                            </ul>
-                            <p style="margin-top: 1rem;"><strong>Sauce:</strong></p>
-                            <ul style="line-height: 1.8;">
-                                <li>2 garlic cloves, finely grated</li>
-                                <li>6 Tbsp. mayonnaise</li>
-                                <li>1 tsp. extra-virgin olive oil</li>
-                                <li>1 tsp. fresh lemon juice</li>
-                            </ul>
-                        </div>
-                        <div class="detail-box">
-                            <h4>Procedures</h4>
-                            <ol style="line-height: 1.8;">
-                                <li>Prepare the balat (peel) ng puso ng saging. Carefully remove the outer layers until you reach the soft inner layers. Slice into desired sizes.</li>
-                                <li>Soak in lemon water for 10–15 minutes to remove bitterness, then rinse and drain well.</li>
-                                <li>Season the balat with salt and black pepper.</li>
-                                <li>Prepare coating mixture by combining cornstarch, chicken breading, and paprika.</li>
-                                <li>Beat egg in a bowl, then dip each piece of balat into the egg mixture.</li>
-                                <li>Coat with breading mixture until fully covered.</li>
-                                <li>Heat oil in a deep pan over medium heat.</li>
-                                <li>Fry until golden brown and crispy. Drain on paper towels.</li>
-                                <li>Mix sauce ingredients and serve hot!</li>
-                            </ol>
-                        </div>
-                        <div class="detail-box">
-                            <h4>Health Benefits</h4>
-                            <p><strong>Puso ng Saging (Banana Blossom) Benefits:</strong></p>
-                            <ul style="line-height: 1.8;">
-                                <li>Rich in fiber - aids digestion and promotes gut health</li>
-                                <li>Low in calories - perfect for weight management</li>
-                                <li>Contains vitamins A, C, and E - boosts immunity</li>
-                                <li>High in antioxidants - fights free radicals</li>
-                                <li>Helps regulate blood sugar levels</li>
-                                <li>Contains iron and magnesium - supports heart health</li>
-                            </ul>
+                <img src="img/chips.jpg" alt="Crispy Balat ng Puso ng Saging" class="product-image">
+                <div class="product-content">
+                    <h3>Crispy Balat ng Puso ng Saging</h3>
+                    <p>Golden-fried banana blossom peels with a satisfying crunch. A guilt-free snack packed with fiber and nutrients. Perfect with our signature garlic aioli dipping sauce!</p>
+                    
+                    <div class="qr-section">
+                        <p class="qr-label">Scan for Full Recipe & Details</p>
+                        <div class="qr-code">
+                            <!-- Replace this div with: <img src="qr-codes/crispy-balat-qr.png" style="width:100%;height:100%;object-fit:contain;"> -->
+                            QR Code Here
                         </div>
                     </div>
+                    
+                    <a href="crispy.html" class="view-details-btn">View Full Details</a>
                 </div>
             </div>
 
-            <!-- Product 2: PUSO NG SAGING SIOMAI -->
-            <!-- TO CHANGE IMAGE: Replace the src URL in the img tag below -->
+            <!-- Product 2: Siomai -->
             <div class="product-card">
-                <div class="product-header" onclick="toggleDropdown(2)">
-                    <img src="https://via.placeholder.com/120" alt="Siomai" class="product-image">
-                    <div class="product-info">
-                        <h3>Puso ng Saging Siomai</h3>
-                        <p>Healthy and flavorful steamed dumplings with banana blossom filling</p>
-                    </div>
-                    <span class="dropdown-icon" id="icon-2">▼</span>
-                </div>
-                <div class="product-details" id="details-2">
-                    <div class="details-content">
-                        <!-- TO ADD QR CODE: Replace the div content with <img src="your-qr-code.png" style="width:150px;height:150px;"> -->
-                        <div class="detail-box">
-                            <h4>QR Code</h4>
-                            <div class="qr-placeholder">QR Code Here</div>
-                        </div>
-                        <div class="detail-box">
-                            <h4>Ingredients</h4>
-                            <ul style="line-height: 1.8;">
-                                <li>2 Banana blossoms (puso ng saging)</li>
-                                <li>1 tablespoon Knorr seasoning</li>
-                                <li>1 egg</li>
-                                <li>Molo wrapper (siomai wrapper)</li>
-                                <li>1 tsp Salt</li>
-                                <li>1 tsp Pepper</li>
-                                <li>2 Carrots, grated</li>
-                                <li>5 Garlic cloves, minced</li>
-                                <li>1 pc Celery</li>
-                                <li>2 pc Onions, chopped</li>
-                                <li>1 pc Onion leaves</li>
-                                <li>2 cups All-purpose flour</li>
-                                <li>Soy sauce and vinegar with ginger strips (for dipping)</li>
-                            </ul>
-                        </div>
-                        <div class="detail-box">
-                            <h4>Procedures</h4>
-                            <ol style="line-height: 1.8;">
-                                <li>Remove tough outer layers of banana blossom. Chop tender inner part finely.</li>
-                                <li>Soak in water with lemon for 15–20 minutes to remove bitterness. Rinse and squeeze out excess water.</li>
-                                <li>In a bowl, combine chopped banana blossom, grated carrot, onion, and garlic.</li>
-                                <li>Add Knorr seasoning, egg, salt, and pepper. Mix until evenly combined and sticky.</li>
-                                <li>Place 1 tablespoon of mixture in the center of a siomai wrapper. Gather sides and press to form shape.</li>
-                                <li>Arrange in a steamer lined with parchment paper or banana leaf.</li>
-                                <li>Steam for 15–20 minutes until firm and cooked through.</li>
-                                <li>Serve warm with soy-vinegar dipping sauce and ginger strips!</li>
-                            </ol>
-                        </div>
-                        <div class="detail-box">
-                            <h4>Health Benefits</h4>
-                            <p><strong>Why Choose Puso ng Saging Siomai:</strong></p>
-                            <ul style="line-height: 1.8;">
-                                <li>Low-fat alternative to traditional pork siomai</li>
-                                <li>High in dietary fiber - keeps you full longer</li>
-                                <li>Plant-based protein source</li>
-                                <li>Rich in potassium - supports healthy blood pressure</li>
-                                <li>Contains essential minerals like calcium and phosphorus</li>
-                                <li>Steamed preparation retains more nutrients</li>
-                            </ul>
+                <img src="img/siomai.jpg" alt="Puso ng Saging Siomai" class="product-image">
+                <div class="product-content">
+                    <h3>Puso ng Saging Siomai</h3>
+                    <p>Steamed dumplings filled with seasoned banana blossom, carrots, and aromatics. A healthier twist on the Filipino favorite – 100% plant-based and delicious!</p>
+                    
+                    <div class="qr-section">
+                        <p class="qr-label">Scan for Full Recipe & Details</p>
+                        <div class="qr-code">
+                            <!-- Replace this div with: <img src="qr-codes/siomai-qr.png" style="width:100%;height:100%;object-fit:contain;"> -->
+                            QR Code Here
                         </div>
                     </div>
+                    
+                    <a href="siomai.html" class="view-details-btn">View Full Details</a>
                 </div>
             </div>
 
-            <!-- Product 3: PUSO NG SAGING PASTIL -->
-            <!-- TO CHANGE IMAGE: Replace the src URL in the img tag below -->
+            <!-- Product 3: Pastil -->
             <div class="product-card">
-                <div class="product-header" onclick="toggleDropdown(3)">
-                    <img src="https://via.placeholder.com/120" alt="Pastil" class="product-image">
-                    <div class="product-info">
-                        <h3>Puso ng Saging Pastil</h3>
-                        <p>Traditional Filipino rice dish with savory banana blossom filling wrapped in banana leaves</p>
-                    </div>
-                    <span class="dropdown-icon" id="icon-3">▼</span>
-                </div>
-                <div class="product-details" id="details-3">
-                    <div class="details-content">
-                        <!-- TO ADD QR CODE: Replace the div content with <img src="your-qr-code.png" style="width:150px;height:150px;"> -->
-                        <div class="detail-box">
-                            <h4>QR Code</h4>
-                            <div class="qr-placeholder">QR Code Here</div>
-                        </div>
-                        <div class="detail-box">
-                            <h4>Ingredients</h4>
-                            <ul style="line-height: 1.8;">
-                                <li>Puso ng saging (banana blossom), chopped</li>
-                                <li>Oil</li>
-                                <li>Onion, chopped</li>
-                                <li>Garlic, minced</li>
-                                <li>Laurel leaf (bay leaf)</li>
-                                <li>Black pepper</li>
-                                <li>Turmeric powder</li>
-                                <li>Soy sauce</li>
-                                <li>Vinegar</li>
-                                <li>Sugar</li>
-                                <li>Steamed rice</li>
-                                <li>Banana leaves (optional, for wrapping)</li>
-                            </ul>
-                        </div>
-                        <div class="detail-box">
-                            <h4>Procedures</h4>
-                            <ol style="line-height: 1.8;">
-                                <li>Peel and chop puso ng saging finely. Soak in water with salt or vinegar for 10 minutes. Rinse and drain well.</li>
-                                <li>Heat oil in a pan over medium flame.</li>
-                                <li>Sauté onion and garlic until fragrant and slightly golden.</li>
-                                <li>Add the drained puso ng saging and stir well.</li>
-                                <li>Season with laurel leaf, black pepper, and turmeric powder. Mix to coat evenly.</li>
-                                <li>Pour in soy sauce and vinegar. Do not stir immediately—let it simmer for 2 minutes.</li>
-                                <li>Add sugar to balance the flavor. Stir well.</li>
-                                <li>Continue cooking for 5–10 minutes until tender and sauce is absorbed.</li>
-                                <li>Serve over steamed rice and wrap in banana leaves, just like traditional pastil!</li>
-                            </ol>
-                        </div>
-                        <div class="detail-box">
-                            <h4>Health Benefits</h4>
-                            <p><strong>Nutritional Advantages:</strong></p>
-                            <ul style="line-height: 1.8;">
-                                <li>Turmeric adds anti-inflammatory properties</li>
-                                <li>Complete vegetarian meal option</li>
-                                <li>High in fiber - promotes digestive health</li>
-                                <li>Low in cholesterol and saturated fats</li>
-                                <li>Rich in antioxidants from banana blossom</li>
-                                <li>Provides sustained energy from complex carbs</li>
-                                <li>Traditional preparation preserves natural nutrients</li>
-                            </ul>
+                <img src="img/Pastil_Mindanao1.jpg" alt="Puso ng Saging Pastil" class="product-image">
+                <div class="product-content">
+                    <h3>Puso ng Saging Pastil</h3>
+                    <p>Traditional Filipino rice wrap with savory banana blossom cooked in turmeric and spices. Wrapped in banana leaves for an authentic, aromatic experience.</p>
+                    
+                    <div class="qr-section">
+                        <p class="qr-label">Scan for Full Recipe & Details</p>
+                        <div class="qr-code">
+                            <!-- Replace this div with: <img src="qr-codes/pastil-qr.png" style="width:100%;height:100%;object-fit:contain;"> -->
+                            QR Code Here
                         </div>
                     </div>
+                    
+                    <a href="pastil.html" class="view-details-btn">View Full Details</a>
                 </div>
             </div>
 
-            <!-- Product 4: BANANA BLOSSOM SMOOTHIE -->
-            <!-- TO CHANGE IMAGE: Replace the src URL in the img tag below -->
+            <!-- Product 4: Smoothie -->
             <div class="product-card">
-                <div class="product-header" onclick="toggleDropdown(4)">
-                    <img src="https://via.placeholder.com/120" alt="Smoothie" class="product-image">
-                    <div class="product-info">
-                        <h3>Banana Blossom Smoothie</h3>
-                        <p>Refreshing and nutritious smoothie blend - a perfect healthy drink!</p>
-                    </div>
-                    <span class="dropdown-icon" id="icon-4">▼</span>
-                </div>
-                <div class="product-details" id="details-4">
-                    <div class="details-content">
-                        <!-- TO ADD QR CODE: Replace the div content with <img src="your-qr-code.png" style="width:150px;height:150px;"> -->
-                        <div class="detail-box">
-                            <h4>QR Code</h4>
-                            <div class="qr-placeholder">QR Code Here</div>
+                <img src="img/smoothie.jpg" alt="Banana Blossom Smoothie" class="product-image">
+                <div class="product-content">
+                    <h3>Banana Blossom Smoothie</h3>
+                    <p>Creamy, refreshing blend of banana, banana blossom, and milk. A nutrient-rich drink that's perfect for breakfast or post-workout refreshment!</p>
+                    
+                    <div class="qr-section">
+                        <p class="qr-label">Scan for Full Recipe & Details</p>
+                        <div class="qr-code">
+                            <!-- Replace this div with: <img src="qr-codes/smoothie-qr.png" style="width:100%;height:100%;object-fit:contain;"> -->
+                            QR Code Here
                         </div>
-                        <div class="detail-box">
-                            <h4>Ingredients</h4>
-                            <ul style="line-height: 1.8;">
-                                <li>1 ripe banana</li>
-                                <li>1/4 cup puso ng saging (banana blossom), tender inner parts</li>
-                                <li>1 cup milk (dairy or plant-based)</li>
-                                <li>2-3 tablespoons condensed milk (adjust to taste)</li>
-                                <li>1 cup ice cubes</li>
-                                <li>Optional: 1 tsp honey or vanilla extract for extra flavor</li>
-                            </ul>
-                        </div>
-                        <div class="detail-box">
-                            <h4>Procedures</h4>
-                            <ol style="line-height: 1.8;">
-                                <li>Prepare the banana blossom by removing tough outer layers and extracting the tender inner portions.</li>
-                                <li>Soak banana blossom in water with a bit of lemon juice for 5 minutes to reduce any bitterness. Rinse and drain well.</li>
-                                <li>Peel the banana and break it into chunks.</li>
-                                <li>Add all ingredients to a blender: banana, prepared banana blossom, milk, condensed milk, and ice cubes.</li>
-                                <li>Blend on high speed for 1-2 minutes until smooth and creamy.</li>
-                                <li>Taste and adjust sweetness by adding more condensed milk or honey if desired.</li>
-                                <li>Pour into a glass and serve immediately. Enjoy your nutritious smoothie!</li>
-                            </ol>
-                            <p style="margin-top: 1rem;"><em>Tip: For a thicker smoothie, use frozen banana or add more ice!</em></p>
-                        </div>
-                        <div class="detail-box">
-                            <h4>Health Benefits</h4>
-                            <p><strong>Nutrient-Packed Refreshment:</strong></p>
-                            <ul style="line-height: 1.8;">
-                                <li>Excellent source of potassium from bananas</li>
-                                <li>Rich in vitamins and minerals from banana blossom</li>
-                                <li>Provides calcium and protein from milk</li>
-                                <li>Natural energy boost - perfect for breakfast or post-workout</li>
-                                <li>High in dietary fiber - promotes healthy digestion</li>
-                                <li>Contains antioxidants for immune support</li>
-                                <li>Creamy texture without artificial thickeners</li>
-                                <li>Naturally sweet - minimal added sugar needed</li>
-                            </ul>
-                        </div>
-                    </div>
+                    </div>s
+                    
+                    <a href="smoothie.html" class="view-details-btn">View Full Details</a>
                 </div>
             </div>
 
         </div>
     </section>
 
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-header">
+                <h2>About Heart Bites</h2>
+                <div class="underline"></div>
+                <p style="font-size: 1.1rem; color: #555; max-width: 700px; margin: 0 auto;">
+                    Bringing the goodness of nature to your table, one bite at a time
+                </p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=800&h=600&fit=crop" alt="Fresh banana blossoms">
+                </div>
+                <div class="about-text">
+                    <h3>Our Story</h3>
+                    <p>
+                        Heart Bites was born from a simple belief: healthy snacking should never compromise on taste. We discovered the incredible nutritional power of Puso ng Saging (banana blossom heart) and knew we had to share it with the world.
+                    </p>
+                    <p>
+                        Each crispy bite is carefully crafted to preserve the natural goodness of this Filipino superfood. Rich in fiber, antioxidants, and essential minerals, our snacks prove that nature's bounty can be both delicious and nutritious.
+                    </p>
+                    <p>
+                        We're committed to sustainable farming practices, supporting local communities, and bringing you snacks that are as good for the planet as they are for your body.
+                    </p>
+                </div>
+            </div>
+
+            <div class="about-values">
+                <div class="value-card">
+                    <div class="value-icon">🌱</div>
+                    <h4>100% Natural</h4>
+                    <p>No artificial preservatives, colors, or flavors. Just pure, wholesome ingredients from nature.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h4>Community First</h4>
+                    <p>We partner with local farmers, ensuring fair trade practices and supporting Filipino agriculture.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">💚</div>
+                    <h4>Sustainably Sourced</h4>
+                    <p>Every ingredient is ethically sourced with minimal environmental impact and maximum care.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <div class="contact-header">
+                <h2>Get In Touch</h2>
+                <div class="underline"></div>
+                <p style="font-size: 1.1rem; opacity: 0.9;">
+                    Have questions? We'd love to hear from you!
+                </p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Angeles City, Central Luzon<br>Philippines</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p><a href="tel:+639123456789">+63 912 345 6789</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p><a href="mailto:hello@heartbites.ph">hello@heartbites.ph</a><br>
+                            <a href="mailto:orders@heartbites.ph">orders@heartbites.ph</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">⏰</div>
+                        <div class="contact-details">
+                            <h4>Business Hours</h4>
+                            <p>Monday - Saturday: 8:00 AM - 6:00 PM<br>
+                            Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <!-- Update this with your actual Google Maps embed from the location link you provided -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61836.89267982991!2d120.53476117832033!3d15.145390900000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396f2f31d18d58f%3A0x28fe129bade6288!2sAngeles%2C%20Pampanga%2C%20Philippines!5e0!3m2!1sen!2s!4v1699999999999!5m2!1sen!2s"
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer id="contact">
-        <p>&copy; 2024 Heart Bites. Healthier Bites, Naturally Better.</p>
-        <p>Contact us for more information about our products</p>
+    <footer>
+        <p>&copy; 2025 Heart Bites. Healthier Bites, Naturally Better.</p>
+        <p>Made with ❤️ in Baliuag City, Philippines</p>
     </footer>
 
     <script>
-        function toggleDropdown(id) {
-            const details = document.getElementById(`details-${id}`);
-            const icon = document.getElementById(`icon-${id}`);
-            
-            details.classList.toggle('active');
-            icon.classList.toggle('active');
-        }
-
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -540,5 +672,3 @@
     </script>
 </body>
 </html>
-
-

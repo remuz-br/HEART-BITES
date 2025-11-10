@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crispy Balat ng Puso ng Saging - Heart Bites</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1rem 5%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2d5016;
+            text-decoration: none;
+        }
+
+        .back-btn {
+            padding: 0.5rem 1.5rem;
+            background: #2d5016;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: opacity 0.3s;
+        }
+
+        .back-btn:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .product-hero {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%);
+            color: white;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .product-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Product Details Section */
+        .product-details {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;     /* vertically centers text with the image */
+            justify-content: center; /* centers the whole group horizontally */
+            gap: 8px;                /* space between image and text */
+        }
+
+        .logo {
+            text-align: center;      /* ensures text itself is centered */
+        }
+
+        .detail-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #c9a961;
+        }
+
+        .detail-card h3 {
+            color: #2d5016;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .detail-card h3::before {
+            content: '🌿';
+            font-size: 1.8rem;
+        }
+
+        .detail-card ul, .detail-card ol {
+            margin-left: 1.5rem;
+            line-height: 2;
+        }
+
+        .detail-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-card p {
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .ingredients-list h3::before {
+            content: '🥬';
+        }
+
+        .procedures-list h3::before {
+            content: '👨‍🍳';
+        }
+
+        .health-benefits h3::before {
+            content: '💚';
+        }
+
+        .sauce-section {
+            background: #f8f8f8;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+
+        .sauce-section h4 {
+            color: #2d5016;
+            margin-bottom: 1rem;
+        }
+
+        /* Image Gallery */
+        .image-section {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: #f8f8f8;
+            border-radius: 15px;
+        }
+
+        .product-image {
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Tips Section */
+        .tips-section {
+            background: linear-gradient(135deg, #fff9e6, #f0f8e8);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border-left: 5px solid #c9a961;
+        }
+
+        .tips-section h3 {
+            color: #2d5016;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .tips-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tips-section li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .tips-section li::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d5016;
+            color: white;
+            text-align: center;
+            padding: 2rem 5%;
+            margin-top: 4rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .product-hero h1 {
+                font-size: 2rem;
+            }
+
+            .detail-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .logo-nav{
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+          }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo-container">
+            <img class="logo-nav" src="img/vectorized-cropped.svg" alt="">
+            <a href="index.html" class="logo">HEART BITES</a>
+        </div>
+        <a href="index.html#products" class="back-btn">← Back to Products</a>
+    </nav>
+
+    <!-- Product Hero -->
+    <section class="product-hero">
+        <h1>Crispy Balat ng Puso ng Saging</h1>
+        <p>Golden-fried banana blossom peels with a satisfying crunch</p>
+    </section>
+
+    <!-- Product Details -->
+    <section class="product-details">
+        
+        <!-- Product Image -->
+        <div class="image-section">
+            <img src="img/chips.jpg" alt="Crispy Balat ng Puso ng Saging" class="product-image">
+            <p style="margin-top: 1rem; color: #666; font-style: italic;">A guilt-free snack packed with fiber and nutrients</p>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="detail-grid">
+            
+            <!-- Ingredients -->
+            <div class="detail-card ingredients-list">
+                <h3>Ingredients</h3>
+                <ul>
+                    <li>Balat ng puso ng saging</li>
+                    <li>Lemon (for soaking)</li>
+                    <li>Cornstarch</li>
+                    <li>Chicken breading</li>
+                    <li>Paprika</li>
+                    <li>Egg</li>
+                    <li>Black pepper</li>
+                    <li>Salt</li>
+                    <li>Oil (for frying)</li>
+                </ul>
+
+                <div class="sauce-section">
+                    <h4>Garlic Aioli Sauce:</h4>
+                    <ul>
+                        <li>2 garlic cloves, finely grated</li>
+                        <li>6 Tbsp. mayonnaise</li>
+                        <li>1 tsp. extra-virgin olive oil</li>
+                        <li>1 tsp. fresh lemon juice</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Procedures -->
+            <div class="detail-card procedures-list">
+                <h3>Preparation Steps</h3>
+                <ol>
+                    <li>Prepare the balat (peel) ng puso ng saging. Carefully remove the outer layers until you reach the soft inner layers. Slice into desired sizes.</li>
+                    <li>Soak in lemon water for 10–15 minutes to remove bitterness, then rinse and drain well.</li>
+                    <li>Season the balat with salt and black pepper.</li>
+                    <li>Prepare coating mixture by combining cornstarch, chicken breading, and paprika.</li>
+                    <li>Beat egg in a bowl, then dip each piece of balat into the egg mixture.</li>
+                    <li>Coat with breading mixture until fully covered.</li>
+                    <li>Heat oil in a deep pan over medium heat.</li>
+                    <li>Fry until golden brown and crispy. Drain on paper towels.</li>
+                    <li>Mix sauce ingredients and serve hot!</li>
+                </ol>
+            </div>
+
+            <!-- Health Benefits -->
+            <div class="detail-card health-benefits">
+                <h3>Health Benefits</h3>
+                <p style="font-weight: 600; margin-bottom: 1rem;">Why Puso ng Saging is a Superfood:</p>
+                <ul>
+                    <li><strong>Rich in fiber</strong> - aids digestion and promotes gut health</li>
+                    <li><strong>Low in calories</strong> - perfect for weight management</li>
+                    <li><strong>Contains vitamins A, C, and E</strong> - boosts immunity</li>
+                    <li><strong>High in antioxidants</strong> - fights free radicals</li>
+                    <li><strong>Helps regulate blood sugar levels</strong></li>
+                    <li><strong>Contains iron and magnesium</strong> - supports heart health</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Tips Section -->
+        <div class="tips-section">
+            <h3>Pro Tips for Perfect Crispy Balat</h3>
+            <ul>
+                <li>Make sure to squeeze out excess water after soaking for extra crispiness</li>
+                <li>Don't overcrowd the pan while frying - work in batches</li>
+                <li>Maintain oil temperature at medium heat to prevent burning</li>
+                <li>The sauce can be made ahead and refrigerated for up to 3 days</li>
+                <li>For extra flavor, add a pinch of garlic powder to the breading mix</li>
+                <li>Serve immediately for maximum crunch!</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Heart Bites. Healthier Bites, Naturally Better.</p>
+        <p>Made with ❤️ in Angeles City, Philippines</p>
+    </footer>
+</body>
+</html>

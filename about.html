@@ -234,9 +234,78 @@
                 font-size: 1.5rem;
             }
         }
+
+        footer {
+            background: #2d5016;
+            color: white;
+            text-align: center;
+            padding: 2rem 5%;
+        }
+         /* Navigation */
+        nav {
+            background: white;
+            padding: 1rem 5%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2d5016;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #2d5016;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;     /* vertically centers text with the image */
+            justify-content: center; /* centers the whole group horizontally */
+            gap: 8px;                /* space between image and text */
+        }
+
+        .logo {
+            text-align: center;      /* ensures text itself is centered */
+        }
+        .logo-nav{
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+          }
     </style>
 </head>
 <body>
+        <!-- Navigation -->
+    <nav>
+        <div class="logo-container">
+            <img class="logo-nav" src="img/vectorized-cropped.svg" alt="">
+            <a href="index.html" class="logo">HEART BITES</a>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">Products</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
     <!-- ABOUT SECTION -->
     <!-- Replace your current products section with this entire about section -->
     <section class="about-section" id="about">
@@ -251,18 +320,14 @@
 
             <div class="about-content">
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=800&h=600&fit=crop" alt="Fresh banana blossoms">
+                    <img src="img/banana anatomy.jpg" alt="Fresh banana blossoms">
                 </div>
                 <div class="about-text">
                     <h3>Our Story</h3>
                     <p>
-                        Heart Bites was born from a simple belief: healthy snacking should never compromise on taste. We discovered the incredible nutritional power of Puso ng Saging (banana blossom heart) and knew we had to share it with the world.
-                    </p>
-                    <p>
-                        Each crispy bite is carefully crafted to preserve the natural goodness of this Filipino superfood. Rich in fiber, antioxidants, and essential minerals, our snacks prove that nature's bounty can be both delicious and nutritious.
-                    </p>
-                    <p>
-                        We're committed to sustainable farming practices, supporting local communities, and bringing you snacks that are as good for the planet as they are for your body.
+                        The BSHM Department proudly presents INNOVEATS 2025, a culinary and hospitality innovation event that showcases the creativity, passion, and talent of our future hoteliers and restaurateurs!
+
+                        Dive into a flavorful journey where traditional cuisine meets modern innovation — from inventive dishes and interactive booths to creative food concepts that redefine the art of hospitality.
                     </p>
                 </div>
             </div>
@@ -286,5 +351,9 @@
             </div>
         </div>
     </section>
+    <footer id="contact">
+        <p>&copy; 2025 Heart Bites. Healthier Bites, Naturally Better.</p>
+        <p>Contact us for more information about our products</p>
+    </footer>
 </body>
 </html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crispy Balat ng Puso ng Saging - Heart Bites</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1rem 5%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2d5016;
+            text-decoration: none;
+        }
+
+        .back-btn {
+            padding: 0.5rem 1.5rem;
+            background: #2d5016;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: opacity 0.3s;
+        }
+
+        .back-btn:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .product-hero {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%);
+            color: white;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .product-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Product Details Section */
+        .product-details {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .detail-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #c9a961;
+        }
+
+        .detail-card h3 {
+            color: #2d5016;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .detail-card h3::before {
+            content: '🌿';
+            font-size: 1.8rem;
+        }
+
+        .detail-card ul, .detail-card ol {
+            margin-left: 1.5rem;
+            line-height: 2;
+        }
+
+        .detail-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-card p {
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .ingredients-list h3::before {
+            content: '🥬';
+        }
+
+        .procedures-list h3::before {
+            content: '👨‍🍳';
+        }
+
+        .health-benefits h3::before {
+            content: '💚';
+        }
+
+        .sauce-section {
+            background: #f8f8f8;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+
+        .sauce-section h4 {
+            color: #2d5016;
+            margin-bottom: 1rem;
+        }
+
+        /* Image Gallery */
+        .image-section {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: #f8f8f8;
+            border-radius: 15px;
+        }
+
+        .product-image {
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Tips Section */
+        .tips-section {
+            background: linear-gradient(135deg, #fff9e6, #f0f8e8);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border-left: 5px solid #c9a961;
+        }
+
+        .tips-section h3 {
+            color: #2d5016;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .tips-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tips-section li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .tips-section li::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d5016;
+            color: white;
+            text-align: center;
+            padding: 2rem 5%;
+            margin-top: 4rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .product-hero h1 {
+                font-size: 2rem;
+            }
+
+            .detail-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;     /* vertically centers text with the image */
+            justify-content: center; /* centers the whole group horizontally */
+            gap: 8px;                /* space between image and text */
+        }
+
+        .logo {
+            text-align: center;      /* ensures text itself is centered */
+        }
+        .logo-nav{
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+          }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo-container">
+            <img class="logo-nav" src="img/vectorized-cropped.svg" alt="">
+            <a href="index.html" class="logo">HEART BITES</a>
+        </div>
+        <a href="index.html#products" class="back-btn">← Back to Products</a>
+    </nav>
+
+    <!-- Product Hero -->
+    <section class="product-hero">
+        <h1>Puso ng Saging Siomai</h1>
+        <p>Steamed banana blossom to perfection</p>
+    </section>
+
+    <!-- Product Details -->
+    <section class="product-details">
+        
+        <!-- Product Image -->
+        <div class="image-section">
+            <img src="img/siomai.jpg"  class="product-image">
+            <p style="margin-top: 1rem; color: #666; font-style: italic;">A guilt-free snack packed with fiber and nutrients</p>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="detail-grid">
+            
+            <!-- Ingredients -->
+            <div class="detail-card ingredients-list">
+                <h3>Ingredients</h3>
+                <ul>
+                    <li>2 Banana blossoms (puso ng saging)</li>
+                    <li>1 tablespoon Knorr seasoning</li>
+                    <li>1 egg</li>
+                    <li>Molo wrapper (siomai wrapper)</li>
+                    <li>1 tsp Salt</li>
+                    <li>1 tsp Pepper</li>
+                    <li>2 Carrots, grated</li>
+                    <li>5 Garlic cloves, minced</li>
+                    <li>1 pc Celery</li>
+                    <li>2 pc Onions, chopped</li>
+                    <li>1 pc Onion leaves</li>
+                    <li>2 cups All-purpose flour</li>
+                    <li>Soy sauce and vinegar with ginger strips (for dipping)</li>
+                </ul>
+
+            </div>
+
+            <!-- Procedures -->
+            <div class="detail-card procedures-list">
+                <h3>Preparation Steps</h3>
+                <ol>
+                    <li>Remove tough outer layers of banana blossom. Chop tender inner part finely.</li>
+                    <li>Soak in water with lemon for 15–20 minutes to remove bitterness. Rinse and squeeze out excess water.</li>
+                    <li>In a bowl, combine chopped banana blossom, grated carrot, onion, and garlic.</li>
+                    <li>Add Knorr seasoning, egg, salt, and pepper. Mix until evenly combined and sticky.</li>
+                    <li>Place 1 tablespoon of mixture in the center of a siomai wrapper. Gather sides and press to form shape.</li>
+                    <li>Arrange in a steamer lined with parchment paper or banana leaf.</li>
+                    <li>Steam for 15–20 minutes until firm and cooked through.</li>
+                    <li>Serve warm with soy-vinegar dipping sauce and ginger strips!</li>
+                </ol>
+            </div>
+
+            <!-- Health Benefits -->
+            <div class="detail-card health-benefits">
+                <h3>Health Benefits</h3>
+                <p style="font-weight: 600; margin-bottom: 1rem;">Why Choose Puso ng Saging:</p>
+                <ul>
+                    <li>Low-fat alternative to traditional pork siomai</li>
+                    <li>High in dietary fiber - keeps you full longer</li>
+                    <li>Plant-based protein source</li>
+                    <li>Rich in potassium - supports healthy blood pressure</li>
+                    <li>Contains essential minerals like calcium and phosphorus</li>
+                    <li>Steamed preparation retains more nutrients</li>
+                </ul>
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Heart Bites. Healthier Bites, Naturally Better.</p>
+        <p>Made with ❤️ in Baliuag City, Philippines</p>
+    </footer>
+</body>
+</html>
